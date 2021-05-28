@@ -1,0 +1,7 @@
+- name: apt update
+  hosts: all
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+        state: present
