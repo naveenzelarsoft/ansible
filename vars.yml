@@ -1,0 +1,14 @@
+- name: demo on variables
+  hosts: all
+  vars:
+    URL: www.google.com
+    PROJECT: example
+  tasks:
+    - name: print url
+      debug:
+        msg: URL={{URL}}
+    - name: print url from local
+      debug:
+        msg: URL={{URL}}
+  vars:
+    URL: www.gmail.com
