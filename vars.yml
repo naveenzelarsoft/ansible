@@ -9,8 +9,9 @@
     - name: print url from local
       debug:
         msg: URL={{URL}}
+
+    - name: calling var from file
+        debug:
+          msg: URL={{URL}}
   vars_files:
   - example.yml
-    - name: calling var from file
-      debug:
-        msg: URL={{URL}}
