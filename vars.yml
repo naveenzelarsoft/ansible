@@ -10,8 +10,7 @@
     - name: print url from local
       debug:
         msg: URL={{URL}}
-  vars:
-    URL: www.gmail.com
+
     - name: calling var from file
       debug:
         msg: URL={{URL}}
