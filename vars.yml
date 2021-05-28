@@ -10,7 +10,7 @@
       debug:
         msg: URL={{URL}}
     - name: calling var from file
-        debug:
+      debug:
           msg: URL={{URL}}
   vars_files:
   - example.yml
