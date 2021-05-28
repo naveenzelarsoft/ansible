@@ -1,8 +1,5 @@
 - name: demo on variables
   hosts: all
-  vars:
-    URL: www.google.com
-    PROJECT: example
   tasks:
     - name: print url
       debug:
