@@ -1,7 +1,7 @@
 - name: demo on variables
   hosts: all
-  vars_files:
-    - example.yml
+  vars:
+    URL: www.google.com
   tasks:
     - name: print url
       debug:
@@ -9,7 +9,8 @@
     - name: print url from local
       debug:
         msg: URL={{URL}}
-
+  vars_files:
+  - example.yml
     - name: calling var from file
       debug:
         msg: URL={{URL}}
