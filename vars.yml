@@ -31,7 +31,7 @@
 #        msg: Date={{Date}}
 
 - name: print facts
-  hosts:
+  hosts: all
   tasks:
     - name: print fact
       debug:
