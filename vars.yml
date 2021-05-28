@@ -20,3 +20,6 @@
     - name: gather date
       shell: date +%F
       register: out
+    - name: print date
+      debug:
+        msg: date={{out.Stdout}}
