@@ -1,16 +1,22 @@
-- name: demo on variables
+#- name: demo on variables
+#  hosts: all
+#  vars:
+#    URL: www.google.com
+#  tasks:
+#    - name: print url
+#      debug:
+#        msg: URL={{URL}}
+#    - name: print url from local
+#      debug:
+#        msg: URL={{URL}}
+#    - name: calling var from file
+#      debug:
+#          msg: URL={{URL}}
+#  vars_files:
+#  - example.yml
+- name: demo
   hosts: all
-  vars:
-    URL: www.google.com
   tasks:
-    - name: print url
-      debug:
-        msg: URL={{URL}}
-    - name: print url from local
-      debug:
-        msg: URL={{URL}}
-    - name: calling var from file
-      debug:
-          msg: URL={{URL}}
-  vars_files:
-  - example.yml
+    - name: gather date
+      shell: date +%F
+      register: out
