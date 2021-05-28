@@ -1,6 +1,6 @@
 - name: demo on variables
   hosts: all
-  var_files:
+  vars_files:
     - example.yml
   tasks:
     - name: print url
