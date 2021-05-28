@@ -14,18 +14,25 @@
 #          msg: URL={{URL}}
 #  vars_files:
 #  - example.yml
-- name: demo
-  hosts: all
+#- name: demo
+#  hosts: all
+#  tasks:
+#    - name: gather date
+#      shell: date +%F
+#      register: out
+#    - name: print date
+#      debug:
+#        msg: date={{out.stdout}}
+#    - name: set a fact
+#      set_fact:
+#        Date: "{{out.stdout}}"
+#    - name: print Date
+#      debug:
+#        msg: Date={{Date}}
+
+- name: print facts
+  hosts:
   tasks:
-    - name: gather date
-      shell: date +%F
-      register: out
-    - name: print date
+    - name: print fact
       debug:
-        msg: date={{out.stdout}}
-    - name: set a fact
-      set_fact:
-        Date: "{{out.stdout}}"
-    - name: print Date
-      debug:
-        msg: Date={{Date}}
+        msg: Hostname={{ansible_hostname}}
