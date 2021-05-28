@@ -23,3 +23,9 @@
     - name: print date
       debug:
         msg: date={{out.stdout}}
+    - name: set a fact
+      set_fact:
+        Date: "{{out.stdout}}"
+    - name: print Date
+      debug:
+        msg: Date={{Date}}
