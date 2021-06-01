@@ -1,0 +1,28 @@
+- name: Install dependencies
+  apt:
+    name: npm
+    update_cache: yes
+    state: present
+- name: Download Frontend from Nexus
+  get_url:
+    url: https://github.com/naveenzelarsoft/frontend.git
+    dest: /root/frontend.zip
+    username: admin
+    password: admin
+    #- name: Unzip the Downloaded Content
+    # unarchive:
+    #  src: /root/frontend.zip
+    #  dest: /root/frontend
+    # remote_src: yes
+
+- name: Copy {{COMPONENT}} Service file
+  template:
+    src: "{{COMPONENT}}.service"
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+
+- name: Start {{COMPONENT}} Service
+  systemd:
+    name: "{{COMPONENT}}"
+    daemon_reload: yes
+    state: started
+    enabled: yes
