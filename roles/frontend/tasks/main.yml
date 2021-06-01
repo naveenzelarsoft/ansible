@@ -5,7 +5,7 @@
     state: present
 - name: Download Frontend from Nexus
   get_url:
-      url: http://172.31.14.124:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+      url: https://github.com/naveenzelarsoft/frontend.git
       dest: /root/frontend.zip
       username: admin
       password: admin
