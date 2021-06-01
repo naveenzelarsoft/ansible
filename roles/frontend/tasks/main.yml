@@ -9,11 +9,11 @@
       dest: /root/frontend.zip
       username: admin
       password: admin
-- name: Unzip the Downloaded Content
-  unarchive:
-    src: /root/frontend.zip
-    dest: /root/frontend
-    remote_src: yes
+#- name: Unzip the Downloaded Content
+ # unarchive:
+  #  src: /root/frontend.zip
+  #  dest: /root/frontend
+   # remote_src: yes
 
 - name: Replace content
   replace:
