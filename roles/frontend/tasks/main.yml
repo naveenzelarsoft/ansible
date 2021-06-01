@@ -18,8 +18,8 @@
 - name: Replace content
   replace:
     path: /etc/nginx/sites-available/default
-    regexp: '(\s+)/var/www/html(\s+.*)?$'
-    replace: '\1/root/frontend/dist\2'
+    regexp: '/var/www/html'
+    replace: '/root/frontend/dist'
 - name: Start Nginx
   systemd:
     state: started
