@@ -3,3 +3,25 @@
     name: "{{packages}}"
     update_cache: yes
     state: present
+- name: Download Frontend from Nexus
+  get_url:
+      url: http://172.31.14.124:8081/repository/frontend/frontend-{{APP_VERSION}}.zip
+      dest: /root/frontend.zip
+      username: admin
+      password: admin
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/frontend.zip
+    dest: /root/frontend
+    remote_src: yes
+
+- name: Replace content
+  replace:
+    path: /etc/nginx/sites-available/default
+    regexp: '(\s+)/var/www/html(\s+.*)?$'
+    replace: '\/root/frontend/dist\2'
+- name: Start Nginx
+  systemd:
+    state: started
+    name: nginx
+    enabled: yes
