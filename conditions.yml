@@ -1,0 +1,9 @@
+- name: demo
+  hosts: all
+  tasks:
+    - name:
+      debug:
+        msg: hello os
+      when: os == "centos"
+  vars:
+    os: ubuntu
