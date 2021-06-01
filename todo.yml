@@ -1,0 +1,7 @@
+- name: Setup todo project
+  hosts: all
+  become: yes
+  ## THis become can also be used at task level
+  roles:
+    - role: frontend
+      tags: frontend
