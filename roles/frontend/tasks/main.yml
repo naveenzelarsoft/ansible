@@ -1,5 +1,5 @@
 - name: Install nginx
   apt:
-    name: {{frontend}}
+    name: {{ frontend }}
     update_cache: yes
     state: present
