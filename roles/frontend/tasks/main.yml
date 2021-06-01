@@ -19,7 +19,7 @@
   replace:
     path: /etc/nginx/sites-available/default
     regexp: '(\s+)/var/www/html(\s+.*)?$'
-    replace: '\/root/frontend/dist\2'
+    replace: '\1/root/frontend/dist\2'
 - name: Start Nginx
   systemd:
     state: started
