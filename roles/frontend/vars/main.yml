@@ -1,1 +1,4 @@
-packages: npm
+packages:
+   - nginx
+   - npm
+   - nodejs
