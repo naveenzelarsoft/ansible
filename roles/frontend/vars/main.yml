@@ -1,5 +1,4 @@
 packages:
    - nginx
-   - npm
    - nodejs
-   - openjdk-8-jdk
+   - npm
