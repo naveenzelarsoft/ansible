@@ -6,4 +6,4 @@
         msg: hello os
       when: os == "centos"
   vars:
-    os: ubuntu
+    os: centos
