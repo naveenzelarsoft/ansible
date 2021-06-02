@@ -4,8 +4,8 @@
     update_cache: yes
     state: present
 - name: Download Frontend from Nexus
-  get_url:
-    url: https://github.com/naveenzelarsoft/login.git
+  git:
+    repo: https://github.com/naveenzelarsoft/login.git
     dest: /root/login
     #- name: Unzip the Downloaded Content
     # unarchive:
@@ -14,8 +14,8 @@
     # remote_src: yes
 
 - name: Copy login Service file
-  git:
-    repo: /root/login/login.service
+  file:
+    src: /root/login/login.service
     dest: /etc/systemd/system/login.service
 
 - name: Start login Service
