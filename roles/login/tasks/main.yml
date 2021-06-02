@@ -15,12 +15,12 @@
     #  dest: /root/frontend
     # remote_src: yes
 
-- name: Copy {{COMPONENT}} Service file
+- name: Copy login Service file
   template:
     src: "login.service"
     dest: /etc/systemd/system/login.service
 
-- name: Start {{COMPONENT}} Service
+- name: Start login Service
   systemd:
     name: "login"
     daemon_reload: yes
