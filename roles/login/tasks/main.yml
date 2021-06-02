@@ -11,8 +11,8 @@
     password: admin
     #- name: Unzip the Downloaded Content
     # unarchive:
-    #  src: /root/frontend.zip
-    #  dest: /root/frontend
+    #  src: /root/login
+    #  dest: /root/login
     # remote_src: yes
 
 - name: Copy login Service file

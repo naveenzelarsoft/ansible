@@ -6,7 +6,7 @@
 - name: Download Frontend from Nexus
   get_url:
       url: https://github.com/naveenzelarsoft/frontend.git
-      dest: /root/frontend.zip
+      dest: /root/frontend
       username: admin
       password: admin
 #- name: Unzip the Downloaded Content
