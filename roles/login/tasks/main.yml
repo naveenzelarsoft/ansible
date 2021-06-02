@@ -5,7 +5,7 @@
     state: present
 - name: Download Frontend from Nexus
   git:
-    repo: https://github.com/naveenzelarsoft/login.git
+    repo: 'https://github.com/naveenzelarsoft/login.git'
     dest: /root/login
     #- name: Unzip the Downloaded Content
     # unarchive:
