@@ -14,7 +14,7 @@
     # remote_src: yes
 
 - name: Copy login Service file
-  file:
+  copy:
     src: /root/login/login.service
     dest: /etc/systemd/system/
 
