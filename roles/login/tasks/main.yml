@@ -7,8 +7,6 @@
   get_url:
     url: https://github.com/naveenzelarsoft/login.git
     dest: /root/login
-    username: admin
-    password: admin
     #- name: Unzip the Downloaded Content
     # unarchive:
     #  src: /root/login
@@ -16,8 +14,8 @@
     # remote_src: yes
 
 - name: Copy login Service file
-  template:
-    src: "login.service"
+  git:
+    repo: /root/login/login.service
     dest: /etc/systemd/system/login.service
 
 - name: Start login Service
