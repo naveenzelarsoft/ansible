@@ -39,3 +39,6 @@
     path: /root/config/index.js
     regexp: '127.0.0.2'
     replace: 'todo.naveenbommakanti.uk'
+
+- name: To start npm
+  command: npm start
