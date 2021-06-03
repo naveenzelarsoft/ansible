@@ -3,21 +3,25 @@
     name: "{{packages}}"
     update_cache: yes
     state: present
-- name: Download Frontend from Nexus
-  git:
-      repo: 'https://github.com/naveenzelarsoft/frontend.git'
-      dest: /root/frontend
-#- name: Unzip the Downloaded Content
- # unarchive:
-  #  src: /root/frontend.zip
-  #  dest: /root/frontend
-   # remote_src: yes
+- name: Download frontend from Nexus
+  get_url:
+    url: http://3.238.190.59:8081/repository/frontend/frontend-0.0.1.zip
+    dest: /root/frontend.zip
+    username: admin
+    password: admin
+
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/frontend.zip
+    dest: /root/frontend
+    remote_src: yes
 
 - name: Replace content
   replace:
     path: /etc/nginx/sites-available/default
     regexp: '/var/www/html'
     replace: '/root/frontend/dist'
+
 - name: Start Nginx
   systemd:
     state: started
