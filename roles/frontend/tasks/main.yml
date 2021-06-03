@@ -28,18 +28,14 @@
     name: nginx
     enabled: yes
 
-- name: EXPORT LOGIN
-  ansible.builtin.package:
-      name: AUTH_API_ADDRESS
-      state: present
-  environment:
-      http_proxy: http://proxy.login.com:8080
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: "AUTH_API_ADDRESS || 'http://127.0.0.1:8080'"
+    replace: "AUTH_API_ADDRESS || 'http://login.naveenbommakanti.uk:8080'"
 
-- name: EXPORT TODOS
-  ansible.builtin.package:
-    name: TODOS_API_ADDRESS
-    state: present
-  environment:
-      http_proxy: http://proxy.todos.com:8080
-
-
+- name: Replace content
+  replace:
+    path: /root/config/index.js
+    regexp: "TODOS_API_ADDRESS || 'http://127.0.0.1:8080'"
+    replace: "TODOS_API_ADDRESS || 'http://todo.naveenbommakanti.uk:8080'"
