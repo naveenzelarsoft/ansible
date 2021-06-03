@@ -13,7 +13,7 @@
 - name: Unzip the Downloaded Content
   unarchive:
     src: /root/frontend.zip
-    dest: /root/frontend
+    dest: /root
     remote_src: yes
 
 - name: Replace content
