@@ -3,26 +3,28 @@
     name: npm
     update_cache: yes
     state: present
-- name: Download Frontend from Nexus
+
+- name: Download frontend from Nexus
   get_url:
-    url: https://github.com/naveenzelarsoft/frontend.git
-    dest: /root/frontend.zip
+    url: http://3.238.190.59:8081/repository/todos/todos-0.0.1.zip
+    dest: /root/todos.zip
     username: admin
     password: admin
-    #- name: Unzip the Downloaded Content
-    # unarchive:
-    #  src: /root/frontend.zip
-    #  dest: /root/frontend
-    # remote_src: yes
 
-- name: Copy {{COMPONENT}} Service file
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/todos.zip
+    dest: /root
+    remote_src: yes
+
+- name: Copy todos Service file
   template:
-    src: "{{COMPONENT}}.service"
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    src: todos.service
+    dest: /etc/systemd/system/todos.service
 
 - name: Start {{COMPONENT}} Service
   systemd:
-    name: "{{COMPONENT}}"
+    name: todos
     daemon_reload: yes
     state: started
     enabled: yes

@@ -3,17 +3,20 @@
     name: "{{packages}}"
     update_cache: yes
     state: present
-- name: Download Frontend from Nexus
+
+- name: Download frontend from Nexus
   get_url:
-    url: https://github.com/naveenzelarsoft/users.git
-    dest: /root/frontend.zip
+    url: http://3.238.190.59:8081/repository/users/users-0.0.1.zip
+    dest: /root/users.zip
     username: admin
     password: admin
-    #- name: Unzip the Downloaded Content
-    # unarchive:
-    #  src: /root/frontend.zip
-    #  dest: /root/frontend
-    # remote_src: yes
+
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/users.zip
+    dest: /root
+    remote_src: yes
+
 
 - name: Copy {{COMPONENT}} Service file
   template:
