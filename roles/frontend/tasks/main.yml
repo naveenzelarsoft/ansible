@@ -27,3 +27,19 @@
     state: started
     name: nginx
     enabled: yes
+
+- name: EXPORT LOGIN
+  ansible.builtin.package:
+      name: AUTH_API_ADDRESS
+      state: present
+  environment:
+      http_proxy: http://proxy.login.com:8080
+
+- name: EXPORT TODOS
+  ansible.builtin.package:
+    name: TODOS_API_ADDRESS
+    state: present
+  environment:
+      http_proxy: http://proxy.todos.com:8080
+
+
