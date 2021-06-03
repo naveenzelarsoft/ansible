@@ -31,11 +31,11 @@
 - name: Replace content
   replace:
     path: /root/config/index.js
-    regexp: "AUTH_API_ADDRESS || 'http://127.0.0.1:8080'"
-    replace: "AUTH_API_ADDRESS || 'http://login.naveenbommakanti.uk:8080'"
+    regexp: '127.0.0.1'
+    replace: 'login.naveenbommakanti.uk'
 
 - name: Replace content
   replace:
     path: /root/config/index.js
-    regexp: "TODOS_API_ADDRESS || 'http://127.0.0.1:8080'"
-    replace: "TODOS_API_ADDRESS || 'http://todo.naveenbommakanti.uk:8080'"
+    regexp: '127.0.0.2'
+    replace: 'todo.naveenbommakanti.uk'
