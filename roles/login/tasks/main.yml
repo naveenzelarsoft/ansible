@@ -19,7 +19,7 @@
 
 - name: Copy login Service file
   ansible.builtin.copy:
-    src: /home/ubuntu/login/login.service
+    src: /root/login.service
     dest: /etc/systemd/system/login.service
     remote_src: yes
 
