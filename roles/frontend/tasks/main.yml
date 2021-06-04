@@ -42,3 +42,5 @@
 
 - name: To start npm
   shell: npm start
+  args:
+    chdir: /root/
