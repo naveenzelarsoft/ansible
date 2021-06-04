@@ -14,3 +14,11 @@
     - role: users
       tags: users
       when: COMPONENT == "users"
+
+    - role: users
+      tags: users
+        when: COMPONENT == "todo"
+
+    - role: users
+      tags: users
+          when: COMPONENT == "redis"
