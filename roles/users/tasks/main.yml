@@ -20,7 +20,7 @@
 
 - name: Copy {{COMPONENT}} Service file
   template:
-    src: /root/users.service
+    src: "users.service"
     dest: /etc/systemd/system/users.service
     remote_src: yes
 
