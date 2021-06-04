@@ -13,8 +13,8 @@
 
 - name: Unzip the Downloaded Content
   unarchive:
-    src: /root/login
-    dest: /root/login
+    src: /root/login.zip
+    dest: /root/
     remote_src: yes
 
 - name: Copy login Service file
