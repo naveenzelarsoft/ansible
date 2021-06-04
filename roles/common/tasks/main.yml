@@ -1,0 +1,4 @@
+- name: Update Instance
+  apt:
+   update_cache: yes
+
