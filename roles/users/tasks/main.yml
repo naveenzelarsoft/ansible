@@ -22,6 +22,7 @@
   template:
     src: "users.service"
     dest: /etc/systemd/system/{{COMPONENT}}.service
+    remote_src: yes
 
 - name: Start {{COMPONENT}} Service
   systemd:
