@@ -4,9 +4,9 @@
     update_cache: yes
     state: present
 
-- name: Download frontend from Nexus
+- name: Download login  from Nexus
   get_url:
-    url: http://3.238.190.59:8081/repository/login/login-0.0.1.zip
+    url: http://3.227.21.179:8081/repository/login/login-0.0.1.zip
     dest: /root/login.zip
     username: admin
     password: admin
