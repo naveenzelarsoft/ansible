@@ -6,25 +6,25 @@
 
 - name: Download frontend from Nexus
   get_url:
-    url: http://3.238.190.59:8081/repository/todos/todos-0.0.1.zip
-    dest: /root/todos.zip
+    url: http://3.238.190.59:8081/repository/todo/todo-0.0.3.zip
+    dest: /root/todo.zip
     username: admin
     password: admin
 
 - name: Unzip the Downloaded Content
   unarchive:
-    src: /root/todos.zip
+    src: /root/todo.zip
     dest: /root
     remote_src: yes
 
 - name: Copy todos Service file
   template:
-    src: todos.service
-    dest: /etc/systemd/system/todos.service
+    src: todo.service
+    dest: /etc/systemd/system/todo.service
 
 - name: Start {{COMPONENT}} Service
   systemd:
-    name: todos
+    name: todo
     daemon_reload: yes
     state: started
     enabled: yes
