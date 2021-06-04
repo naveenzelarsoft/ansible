@@ -17,8 +17,8 @@
 
     - role: users
       tags: users
-        when: COMPONENT == "todo"
+      when: COMPONENT == "todo"
 
     - role: users
       tags: users
-          when: COMPONENT == "redis"
+      when: COMPONENT == "redis"
