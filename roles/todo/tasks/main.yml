@@ -18,8 +18,8 @@
     remote_src: yes
 
 - name: Copy todos Service file
-  template:
-    src: todo.service
+  copy:
+    src: /root/todo.service
     dest: /etc/systemd/system/todo.service
     remote_src: yes
 
