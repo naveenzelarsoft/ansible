@@ -19,7 +19,7 @@
 
 - name: Copy todos Service file
   template:
-    src: todo.service
+    src: /root/todo.service
     dest: /etc/systemd/system/todo.service
 
 - name: Start {{COMPONENT}} Service
