@@ -15,10 +15,10 @@
       tags: users
       when: COMPONENT == "users"
 
-    - role: users
-      tags: users
+    - role: todo
+      tags: todo
       when: COMPONENT == "todo"
 
-    - role: users
-      tags: users
+    - role: redis
+      tags: redis
       when: COMPONENT == "redis"
