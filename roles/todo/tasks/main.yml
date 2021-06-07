@@ -21,6 +21,7 @@
   template:
     src: /root/todo.service
     dest: /etc/systemd/system/todo.service
+    remote_src: yes
 
 - name: Start {{COMPONENT}} Service
   systemd:
