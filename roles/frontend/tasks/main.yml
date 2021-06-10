@@ -4,19 +4,6 @@
     update_cache: yes
     state: present
 
-- name: Download frontend from Nexus
-  get_url:
-    url: http://34.205.27.64:8081/repository/frontend/frontend-0.0.1.zip
-    dest: /root/frontend.zip
-    username: admin
-    password: admin
-
-- name: Unzip the Downloaded Content
-  unarchive:
-    src: /root/frontend.zip
-    dest: /root/
-    remote_src: yes
-
 - name: Replace content
   replace:
     path: /etc/nginx/sites-available/default

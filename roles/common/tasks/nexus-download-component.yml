@@ -4,3 +4,9 @@
     dest: /root/{{COMPONENT}}.zip
     username: admin
     password: admin
+
+- name: Unzip the Downloaded Content
+  unarchive:
+    src: /root/{{COMPONENT}}.zip
+    dest: /root/
+    remote_src: yes
