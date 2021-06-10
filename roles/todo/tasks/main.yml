@@ -4,15 +4,3 @@
     update_cache: yes
     state: present
 
-- name: Copy todos Service file
-  copy:
-    src: /root/todo.service
-    dest: /etc/systemd/system/todo.service
-    remote_src: yes
-
-- name: Start {{COMPONENT}} Service
-  systemd:
-    name: todo
-    daemon_reload: yes
-    state: started
-    enabled: yes

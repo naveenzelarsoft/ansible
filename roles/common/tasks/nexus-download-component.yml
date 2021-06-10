@@ -1,4 +1,4 @@
-- name: Download frontend from Nexus
+- name: Download {{COMPONENT}} from Nexus
   get_url:
     url: http://34.205.27.64:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APPVERSION}}.zip
     dest: /root/{{COMPONENT}}.zip
