@@ -1,0 +1,12 @@
+- name: Copy {{COMPONENT}} Service file
+  ansible.builtin.copy:
+    src: /root/{{COMPONENT}}.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+    remote_src: yes
+
+- name: Start {{COMPONENT}} Service
+  systemd:
+    name: "{{COMPONENT}}"
+    daemon_reload: yes
+    state: started
+    enabled: yes
