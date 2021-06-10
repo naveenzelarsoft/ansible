@@ -1,6 +1,6 @@
 - name: Install Redis Server
   apt:
-    name: redis-server
+    name: redis
     state: present
     update_cache: yes
 
