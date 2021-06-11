@@ -5,11 +5,11 @@
     state: present
 
 - name: including role
-  iclude_role:
+  include_role:
     name: common
     tasks_from: nexus-download-component
 
 - name: including role
-  iclude_role:
+  include_role:
     name: common
     tasks_from: start-service
