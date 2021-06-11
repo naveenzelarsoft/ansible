@@ -15,6 +15,10 @@
     state: started
     name: nginx
     enabled: yes
+- name: including role
+  include_role:
+    name: common
+    tasks_from: nexus-download-component
 
 - name: Replace content
   replace:
