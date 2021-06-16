@@ -4,8 +4,9 @@ Description=users Service
 [Service]
 
 Environment=SERVER_PORT=8080
-ExecStart=/bin/java -jar /root/target/users-api-0.0.1.jar
+ExecStart=/bin/java -jar /home/ubuntu/target/users-api-0.0.1.jar
 SyslogIdentifier=users
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target

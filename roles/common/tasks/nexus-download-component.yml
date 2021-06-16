@@ -1,12 +1,12 @@
 - name: Download {{COMPONENT}} from Nexus
   get_url:
     url: http://3.219.216.112:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APPVERSION}}.zip
-    dest: /root/{{COMPONENT}}.zip
+    dest: /home/ubuntu/{{COMPONENT}}.zip
     username: admin
     password: admin
 
 - name: Unzip the Downloaded Content
   unarchive:
-    src: /root/{{COMPONENT}}.zip
-    dest: /root/
+    src: /home/ubuntu/{{COMPONENT}}.zip
+    dest: /home/ubuntu/
     remote_src: yes
