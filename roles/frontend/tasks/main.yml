@@ -8,7 +8,7 @@
   replace:
     path: /etc/nginx/sites-available/default
     regexp: '/var/www/html'
-    replace: '/root/frontend/dist'
+    replace: '/home/ubuntu/frontend/dist'
 
 - name: Start Nginx
   systemd:
@@ -36,4 +36,4 @@
 - name: To start npm
   shell: npm start
   args:
-    chdir: /root/
+    chdir: /home/ubuntu
