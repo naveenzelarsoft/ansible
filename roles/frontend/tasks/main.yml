@@ -25,13 +25,13 @@
   replace:
     path: /root/config/index.js
     regexp: '127.0.0.1'
-    replace: 'login.naveenbommakanti.uk'
+    replace: '172.31.50.177'
 
 - name: Replace content
   replace:
     path: /root/config/index.js
     regexp: '127.0.0.2'
-    replace: 'todo.naveenbommakanti.uk'
+    replace: '172.31.55.145'
 
 - name: To start npm
   shell: npm start
