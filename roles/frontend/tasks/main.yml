@@ -14,3 +14,22 @@
   include_role:
     name: common
     tasks_from: nexus-download-component
+
+- name: Remove default files
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+      - /etc/nginx/sites-enabled/default
+      - /etc/nginx/sites-available/default
+
+- name: Copy config file
+  template:
+    src: roboshop.conf
+    dest: /etc/nginx/sites-enabled/roboshop.conf
+
+- name: Start Nginx
+  systemd:
+    state: started
+    name: nginx
+    enabled: yes
