@@ -4,12 +4,6 @@
     update_cache: yes
     state: present
 
-- name: Replace content
-  replace:
-    path: /etc/nginx/sites-available/default
-    regexp: '/var/www/html'
-    replace: '/home/ubuntu/frontend/dist'
-
 - name: Start Nginx
   systemd:
     state: started
@@ -20,20 +14,3 @@
   include_role:
     name: common
     tasks_from: nexus-download-component
-
-- name: Replace content
-  replace:
-    path: /home/ubuntu/config/index.js
-    regexp: '127.0.0.1'
-    replace: '172.31.50.177'
-
-- name: Replace content
-  replace:
-    path: /home/ubuntu/config/index.js
-    regexp: '127.0.0.2'
-    replace: '172.31.55.145'
-
-- name: To start npm
-  shell: npm start
-  args:
-    chdir: /home/ubuntu
