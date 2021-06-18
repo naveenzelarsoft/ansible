@@ -25,8 +25,8 @@
 
 - name: Copy config file
   template:
-    src: roboshop.conf
-    dest: /etc/nginx/sites-enabled/roboshop.conf
+    src: todo.conf
+    dest: /etc/nginx/sites-enabled/todo.conf
 
 - name: Start Nginx
   systemd:
