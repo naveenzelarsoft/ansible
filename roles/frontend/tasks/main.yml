@@ -4,12 +4,6 @@
     update_cache: yes
     state: present
 
-- name: Start Nginx
-  systemd:
-    state: started
-    name: nginx
-    enabled: yes
-
 - name: Download {{COMPONENT}} from Nexus
   get_url:
     url: http://54.146.127.119:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APPVERSION}}.zip
@@ -38,7 +32,7 @@
 
 - name: Start Nginx
   systemd:
-    state: started
+    state: restarted
     name: nginx
     enabled: yes
 
