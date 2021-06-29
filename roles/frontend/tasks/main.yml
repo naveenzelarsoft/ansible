@@ -20,7 +20,7 @@
 - name: Unzip the Downloaded Content
   unarchive:
     src: /var/www/html/{{COMPONENT}}.zip
-    dest: /home/ubuntu/
+    dest: /var/www/html/
     remote_src: yes
 
 - name: Remove default files
