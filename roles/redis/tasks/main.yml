@@ -15,3 +15,8 @@
     name: redis
     state: restarted
     enabled: yes
+
+- name: Install Node Exporter Prometheus Monitoring
+  include_role:
+    name: common
+    tasks_from: node-exporter

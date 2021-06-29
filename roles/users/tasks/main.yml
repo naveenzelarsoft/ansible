@@ -13,3 +13,8 @@
   include_role:
     name: common
     tasks_from: start-service
+
+- name: Install Node Exporter Prometheus Monitoring
+  include_role:
+    name: common
+    tasks_from: node-exporter
