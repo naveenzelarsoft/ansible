@@ -3,7 +3,7 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - {{ log_filename.file }}
+    - {{ log_filename }}
 {% endfor %}
 
 {% if IS_STRUCTURED %}
