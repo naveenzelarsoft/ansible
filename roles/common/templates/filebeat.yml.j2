@@ -5,7 +5,7 @@ filebeat.inputs:
   paths:
     - {{ log_filename.file }}
   fields:
-    logtype: {{ log_filename.type}}
+    logtype: {{ log_filename.type }}
 {% endfor %}
 
 {% if IS_STRUCTURED %}
