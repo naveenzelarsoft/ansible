@@ -4,14 +4,16 @@ filebeat.inputs:
   enabled: true
   paths:
     - {{ log_filename.file }}
+  fields:
+    logtype: {{ log_filename.type}}
 {% endfor %}
 
 {% if IS_STRUCTURED %}
 output.elasticsearch:
-  hosts: ["localhost:9200"]
+  hosts: ["172.31.68.109:9200"]
 {% else %}
 output.logstash:
-  hosts: ["localhost:5044"]
+  hosts: ["172.31.68.109:5044"]
 {% endif %}
 
 filebeat.config.modules:
