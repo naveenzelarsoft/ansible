@@ -26,4 +26,4 @@
   vars:
     IS_STRUCTURED: true
     LOG_FILES:
-      - { file: "/var/log/login.log", type: "login" }
+      - { file: "/var/log/{{COMPONENT}}.log", type: "{{COMPONENT}}" }
