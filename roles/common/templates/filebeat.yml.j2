@@ -14,9 +14,16 @@ filebeat.inputs:
 {% if IS_STRUCTURED %}
 output.elasticsearch:
   hosts: ["172.31.68.109:9200"]
+  index: "{{COMPONENT}}-%{+yyyy.MM.dd}"
 {% else %}
 output.logstash:
   hosts: ["172.31.68.109:5044"]
+{% endif %}
+
+{% if IS_STRUCTURED %}
+setup.template.name: "{{COMPONENT}}"
+setup.template.pattern: "{{COMPONENT}}-*"
+setup.ilm.enabled: false
 {% endif %}
 
 filebeat.config.modules:
