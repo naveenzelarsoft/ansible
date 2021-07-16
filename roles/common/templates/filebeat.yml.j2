@@ -11,7 +11,7 @@ filebeat.inputs:
     logtype: {{ log_filename.type }}
 {% if IS_JAVA %}
   multiline.type: pattern
-  multiline.pattern: '^\[[:space:]][[0-9][0-9][0-9]'
+  multiline.pattern: '^[[:space:]][0-9][0-9][0-9]'
   multiline.negate: true
   multiline.match: after
 {% endif %}
