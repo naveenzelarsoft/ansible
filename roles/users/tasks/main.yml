@@ -39,3 +39,6 @@
    IS_JAVA: true
    LOG_FILES:
     - { file: "/var/log/{{COMPONENT}}.log", type: "{{COMPONENT}}" }
+
+
+#  update alternatives --config java
