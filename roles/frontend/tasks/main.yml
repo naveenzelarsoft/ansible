@@ -30,6 +30,11 @@
     src: todo.conf
     dest: /etc/nginx/sites-enabled/todo.conf
 
+- name: Update NGINX Main config
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+
 - name: Start Nginx
   systemd:
     state: restarted
