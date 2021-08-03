@@ -1,8 +1,9 @@
 - name: Install Apt Addons
   apt:
     name: apt-transport-https
-    state: present
     update_cache: yes
+    state: present
+
 
 - name: Add Filebeat Key
   apt_key:
