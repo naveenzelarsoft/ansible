@@ -1,6 +1,6 @@
 - name: Download {{COMPONENT}} from Nexus
   get_url:
-    url: http://172.31.12.251:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APPVERSION}}.zip
+    url: http://172.31.31.154:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APPVERSION}}.zip
     dest: /home/ubuntu/{{COMPONENT}}.zip
     username: admin
     password: admin
